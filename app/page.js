@@ -143,7 +143,7 @@ export default function Home() {
 
           <div onClick={(e) => { e.stopPropagation(); }} className={`lg:w-[40vw] w-[80vw] p-4 rounded-2xl shadow-lg border border-gray-200 my-8 ${inputhidden == true ? "" : "hidden"}`}>
             <input value={title} type="text" placeholder="Title" className="w-full mb-2 outline-none text-lg font-medium placeholder-gray-500" onChange={(e) => { TitleChange(e) }} />
-            <textarea value={note} placeholder="Take a note..." className="w-full h-24 outline-none placeholder-gray-500" onChange={(e) => { NoteChange(e); }} ></textarea>
+            <textarea value={note} placeholder="Take a note..." className="w-full h-40 outline-none placeholder-gray-500" onChange={(e) => { NoteChange(e); }} ></textarea>
             {title.length >= 1 && note.length >= 1 &&
               <button onClick={() => { SaveToDB() }} type="button" className=" bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 text-white hover:bg-gradient-to-br focus:ring-1 focus:outline-none font-medium rounded-lg text-sm px-3 py-1.5 text-center">Save</button>}
           </div>
