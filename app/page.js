@@ -166,7 +166,7 @@ export default function Home() {
             })}
             {forEditNote == true && <>
               <div className="fixed inset-0 bg-[#0000001f] z-10"></div>
-              <div className="item z-20 bg-white w-[40vw] flex flex-col gap-4 items-center p-4 rounded-2xl ">
+              <div className="item z-20 bg-white w-[40vw] max-xl:w-[90vw] flex flex-col gap-4 items-center p-4 rounded-2xl ">
                 <input onChange={(e) => { editTitleChange(e) }} value={editNoteValuesHandle.title} type="text" placeholder="Title" className="w-full mb-2 outline-none text-2xl font-medium placeholder-gray-500" />
                 <textarea onChange={(e) => { editNoteHandleChange(e) }} value={editNoteValuesHandle.note} placeholder="Take a note..." className="w-full h-24 outline-none placeholder-gray-500"></textarea>
                 <button onClick={() => { saveEditedNote(editNoteValuesHandle.id, editNoteValuesHandle.title, editNoteValuesHandle.note); setForEditNote(false) }} className="bg-black text-white rounded-2xl px-3 py-1.5 mt-4">Save</button>
