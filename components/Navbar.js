@@ -55,7 +55,7 @@ const Navbar = () => {
                   <span className="text-2xl ">Hi, {session.user.name}</span>
                   <button
                     onClick={() => signOut()}
-                    className=" transition-all duration-300 ease-in-out p-4 bg-white bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 text-white hover:bg-gradient-to-br focus:ring-1 focus:outline-none focus:ring-yellow-300 dark:focus:ring-lime-800 font-medium w-full rounded-full shadow-sm hover:shadow-lg my-3"
+                    className=" transition-all duration-300 ease-in-out p-4 bg-white bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 text-white hover:bg-gradient-to-br focus:ring-1 focus:outline-none font-medium w-full rounded-full shadow-sm hover:shadow-lg my-3"
                   >
                     Sign Out
                   </button>
@@ -65,7 +65,7 @@ const Navbar = () => {
               <button
                 onClick={() => signIn()}
                 type="button"
-                className="bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 text-white hover:bg-gradient-to-br focus:ring-1 focus:outline-none focus:ring-yellow-300 dark:focus:ring-lime-800 font-medium rounded-lg text-sm sm:px-5 px-2 sm:py-2.5 py-1.5 text-center"
+                className="bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 text-white hover:bg-gradient-to-br focus:ring-1 focus:outline-none font-medium rounded-lg text-sm sm:px-5 px-2 sm:py-2.5 py-1.5 text-center"
               >
                 Sign In
               </button>

@@ -145,21 +145,21 @@ export default function Home() {
             <input value={title} type="text" placeholder="Title" className="w-full mb-2 outline-none text-lg font-medium placeholder-gray-500" onChange={(e) => { TitleChange(e) }} />
             <textarea value={note} placeholder="Take a note..." className="w-full h-24 outline-none placeholder-gray-500" onChange={(e) => { NoteChange(e); }} ></textarea>
             {title.length >= 1 && note.length >= 1 &&
-              <button onClick={() => { SaveToDB() }} type="button" className=" bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 text-white hover:bg-gradient-to-br focus:ring-1 focus:outline-none focus:ring-yellow-300 dark:focus:ring-lime-800 font-medium rounded-lg text-sm px-3 py-1.5 text-center">Save</button>}
+              <button onClick={() => { SaveToDB() }} type="button" className=" bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 text-white hover:bg-gradient-to-br focus:ring-1 focus:outline-none font-medium rounded-lg text-sm px-3 py-1.5 text-center">Save</button>}
           </div>
 
 
-          {itemsSee == false ? <button onClick={() => { setItemsSee(true) }} className="transition-all duration-300 ease-in-out bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 text-white hover:bg-gradient-to-br focus:ring-1 focus:outline-none focus:ring-yellow-300 dark:focus:ring-lime-800 font-medium rounded-lg px-3 hover:px-3.5 py-1.5 hover:py-2  mt-4"><span>See your Notes</span></button> :
+          {itemsSee == false ? <button onClick={() => { setItemsSee(true) }} className="transition-all duration-300 ease-in-out bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 text-white hover:bg-gradient-to-br focus:ring-1 focus:outline-none font-medium rounded-lg px-3 hover:px-3.5 py-1.5 hover:py-2  mt-4"><span>See your Notes</span></button> :
            <div className="items w-[80vw] flex gap-6 mx-auto flex-wrap items-center mb-8 justify-center">
-             <div className="w-full flex justify-center">{itemsSee == true && <button onClick={() => { setItemsSee(false) }} className="transition-all duration-300 ease-in-out bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 text-white hover:bg-gradient-to-br focus:ring-1 focus:outline-none focus:ring-yellow-300 dark:focus:ring-lime-800 font-medium rounded-lg px-3 hover:px-4 py-1.5 hover:py-2 mt-4">Unvisible your Notes</button>}</div>
+             <div className="w-full flex justify-center">{itemsSee == true && <button onClick={() => { setItemsSee(false) }} className="transition-all duration-300 ease-in-out bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 text-white hover:bg-gradient-to-br focus:ring-1 focus:outline-none font-medium rounded-lg px-3 hover:px-4 py-1.5 hover:py-2 mt-4">Unvisible your Notes</button>}</div>
             {notesArray.map((item) => {
               return <div key={item._id}>
                 {forEditNote == false && <> <div className="transition-colors duration-300 ease-in-out hover:bg-[#0000000a] item flex flex-col gap-1.5 border border-gray-200 p-6 pb-2 rounded-2xl md:max-w-[75vw] max-w-[90vw] sm:min-w-[250px] min-w-[90vw] h-fit">
                   <div className="text-2xl break-words">{item.title}</div>
                   <div className="break-words">{item.note}</div>
                   <div className="button flex justify-end gap-1">
-                    <button onClick={() => { editNote(item._id, item.id); setForEditNote(true) }} className="transition-all duration-300 ease-in-out bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 text-white hover:bg-gradient-to-br focus:ring-1 focus:outline-none focus:ring-yellow-300 dark:focus:ring-lime-800 font-medium rounded-full px-3 hover:px-4 py-1.5 hover:py-2.5 mt-4"><img src="/edit.svg" alt="" /></button>
-                    <button onClick={() => { deleteNote(item.id) }} className="transition-all duration-300 ease-in-out bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 text-white hover:bg-gradient-to-br focus:ring-1 focus:outline-none focus:ring-yellow-300 dark:focus:ring-lime-800 font-medium rounded-full px-3 hover:px-4 py-1.5 hover:py-2.5 mt-4"><img src="/delete.svg" alt="" /></button>
+                    <button onClick={() => { editNote(item._id, item.id); setForEditNote(true) }} className="transition-all duration-300 ease-in-out bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 text-white hover:bg-gradient-to-br focus:ring-1 focus:outline-none font-medium rounded-full px-3 hover:px-4 py-1.5 hover:py-2.5 mt-4"><img src="/edit.svg" alt="" /></button>
+                    <button onClick={() => { deleteNote(item.id) }} className="transition-all duration-300 ease-in-out bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 text-white hover:bg-gradient-to-br focus:ring-1 focus:outline-none font-medium rounded-full px-3 hover:px-4 py-1.5 hover:py-2.5 mt-4"><img src="/delete.svg" alt="" /></button>
                   </div>
                 </div></>}
               </div>
@@ -174,7 +174,7 @@ export default function Home() {
             }
           </div>}
         </div>
-      </div> : <div className="font-bold text-2xl w-full h-[80vh] flex flex-col text-center justify-center items-center gap-2 px-10"><span>Please click on Sign In to Create Notes</span><button onClick={() =>signIn()} type="button" className="bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 text-white hover:bg-gradient-to-br focus:ring-1 focus:outline-none focus:ring-yellow-300 dark:focus:ring-lime-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Sign In</button></div>}
+      </div> : <div className="font-bold text-2xl w-full h-[80vh] flex flex-col text-center justify-center items-center gap-2 px-10"><span>Please click on Sign In to Create Notes</span><button onClick={() =>signIn()} type="button" className="bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 text-white hover:bg-gradient-to-br focus:ring-1 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center">Sign In</button></div>}
     </div>
   );
 }
